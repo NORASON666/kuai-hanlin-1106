@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>酷AI × 翰林雲端學院 說明會</title>
+<meta name="description" content="115年「酷AI學習系統」高、國中智慧教學與評量推動計畫 說明會簡報（2026-11-06）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E3A6E; --ink:#22314d; --blue:#3B82C4; --sky:#5AA9E6; --pale:#DCEEFB; --paper:#FBFDFF;
+  --orange:#F0A23B; --red:#B5462E; --line:#C9D9EA; --muted:#5d6b80; --cream:#FFF6E6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#E9EFF6;color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#deck{width:1920px;height:1080px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--paper);display:none;overflow:hidden;
+  background-image:radial-gradient(circle at 1px 1px,#e3ecf6 1px,transparent 0);background-size:28px 28px}
+.slide.on{display:block}
+.slide::before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:linear-gradient(90deg,var(--sky),var(--pale) 60%,var(--orange))}
+.inner{position:absolute;inset:70px 120px 80px 120px;display:flex;flex-direction:column}
+.pno{position:absolute;right:44px;top:30px;font:700 28px "Noto Sans TC";color:var(--blue)}
+.brand{position:absolute;left:120px;bottom:30px;font:500 22px "Noto Sans TC";color:var(--muted)}
+.kicker{font:700 30px "LXGW WenKai TC",serif;color:var(--blue);letter-spacing:.06em;margin-bottom:6px}
+.kicker::before{content:"✎ ";color:var(--orange)}
+.title{margin:0 0 40px;font-weight:900;font-size:72px;color:var(--navy);line-height:1.15}
+.title span{background:linear-gradient(transparent 62%,var(--pale) 62%);padding:0 10px;border-bottom:6px solid var(--orange)}
+.foot{font-size:36px;font-weight:700;color:var(--navy);margin:30px 0 0;padding:16px 26px;background:var(--cream);border-left:10px solid var(--orange);border-radius:6px}
+.src{font-size:22px;color:var(--muted);margin:16px 0 0}
+mark{background:linear-gradient(transparent 55%,var(--pale) 55%);color:inherit}
+/* 封面 */
+.cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 160px;
+  background:linear-gradient(120deg,#fff 0%,#F1F8FE 55%,#DCEEFB 100%)}
+.cover .org{font:700 36px "LXGW WenKai TC",serif;color:var(--blue)}
+.cover h1{font-weight:900;font-size:104px;line-height:1.18;color:var(--navy);margin:22px 0 30px}
+.cover h1 mark{border-bottom:8px solid var(--orange)}
+.cover .sub{font-size:46px;font-weight:700;color:var(--ink)}
+.cover .meta{margin-top:60px;display:flex;gap:70px;font-size:34px;color:var(--ink)}
+.cover .meta b{display:block;font:700 26px "Noto Sans TC";color:var(--muted);margin-bottom:6px}
+.cover .x{position:absolute;right:140px;top:120px;font:900 220px/1 "Noto Sans TC";color:var(--pale)}
+/* 卡片 */
+.cards{display:grid;gap:34px;flex:1;align-content:center}
+.c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;background:#fff;border:3px solid var(--navy);padding:32px 36px;border-radius:22px;box-shadow:10px 12px 0 var(--pale)}
+.card h3{margin:0 0 14px;font-size:44px;font-weight:900;color:var(--navy)}
+.card p{margin:0;font-size:34px;line-height:1.5}
+.card .en{font:700 26px "Noto Sans TC";color:var(--blue);letter-spacing:.08em;margin-bottom:6px}
+.card .num{width:66px;height:66px;border-radius:50%;background:var(--orange);color:#fff;font:900 38px/66px "Noto Sans TC";text-align:center;margin-bottom:16px}
+.card.hot{background:var(--cream);border-color:var(--red)}
+.card.hot h3{color:var(--red)}
+.big{font:900 78px/1.05 "Noto Sans TC";color:var(--blue);margin-bottom:12px}
+.big small{font-size:44px;margin-left:6px}
+/* 議程 */
+.agenda{list-style:none;margin:auto 0;padding:0;display:flex;flex-direction:column;gap:34px}
+.agenda li{display:flex;align-items:center;gap:34px;background:#fff;border:3px solid var(--navy);border-radius:22px;padding:28px 40px;box-shadow:10px 12px 0 var(--pale)}
+.agenda .n{flex:none;width:96px;height:96px;border-radius:50%;background:var(--sky);color:#fff;font:900 52px/96px "Noto Sans TC";text-align:center}
+.agenda h3{margin:0;font-size:52px;color:var(--navy)}
+.agenda p{margin:6px 0 0;font-size:32px;color:var(--muted)}
+.agenda .who{margin-left:auto;font:700 34px "LXGW WenKai TC",serif;color:var(--red);white-space:nowrap}
+/* 時間軸 */
+.tl{flex:1;display:flex;align-items:center;position:relative;margin:0 20px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:50%;height:8px;background:var(--line);border-radius:4px}
+.tl .pt{flex:1;position:relative;text-align:center}
+.tl .dot{width:46px;height:46px;border-radius:50%;background:var(--blue);border:8px solid #fff;box-shadow:0 0 0 3px var(--blue);margin:0 auto}
+.tl .pt.now .dot{background:var(--orange);box-shadow:0 0 0 3px var(--orange)}
+.tl .d{position:absolute;left:0;right:0;bottom:80px;font:900 44px "Noto Sans TC";color:var(--navy)}
+.tl .t{position:absolute;left:10px;right:10px;top:80px;font-size:32px;line-height:1.45}
+.tl .pt.now .d{color:var(--red)}
+/* 條列 */
+.bul{margin:0;padding-left:1.2em;font-size:42px;line-height:1.6}
+.bul li::marker{color:var(--orange)}
+.bul b{color:var(--navy)}
+.cols{display:flex;gap:60px;flex:1;align-items:center}
+.cols>*{flex:1}
+/* 表格 */
+.tbl{border-collapse:separate;border-spacing:0;width:100%;font-size:34px;background:#fff;border:3px solid var(--navy);border-radius:18px;overflow:hidden}
+.tbl th{background:var(--navy);color:#fff;padding:16px;font-size:32px}
+.tbl td{padding:16px;border-top:2px dashed var(--line);text-align:center}
+.tbl td:first-child{font-weight:700;color:var(--navy)}
+.tbl .hl{background:var(--cream);color:var(--red);font-weight:900}
+.sign{display:flex;gap:24px;margin-top:24px}
+.sign div{flex:1;border:3px dashed var(--line);border-radius:14px;padding:16px;text-align:center;font-size:30px;color:var(--muted)}
+/* 章節頁 */
+.divider{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 180px;background:var(--navy);color:#fff}
+.divider .k{font:700 40px "LXGW WenKai TC",serif;color:var(--orange)}
+.divider h2{font-size:120px;font-weight:900;margin:20px 0;line-height:1.15}
+.divider p{font-size:44px;color:var(--pale);margin:0}
+.slide.dark::before{opacity:.9}
+/* QA */
+.qa{flex:1;display:flex;gap:70px;align-items:stretch}
+.qa .q{flex:1.05;display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--navy);color:#fff;border-radius:30px;text-align:center}
+.qa .q .Q{font:900 230px/1 "Noto Sans TC";color:var(--orange)}
+.qa .q h3{font-size:70px;margin:20px 0 10px}
+.qa .q p{font-size:34px;color:var(--pale);margin:0 40px}
+.qa .r{flex:1;display:flex;flex-direction:column;gap:22px;justify-content:center}
+.qa .r .card{padding:22px 30px}
+.qa .r h4{margin:0 0 6px;font-size:28px;color:var(--blue)}
+.qa .r p{margin:0;font-size:34px;font-weight:700;color:var(--navy);line-height:1.4}
+.url{font-size:30px!important;word-break:break-all;color:var(--blue)!important}
+.end{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(120deg,#fff,#DCEEFB)}
+.end h2{font-size:130px;color:var(--navy);margin:0}
+.end p{font-size:42px;margin:30px 0 0}
+/* 講稿側欄 */
+#panel{position:fixed;top:0;right:0;bottom:0;width:min(560px,92vw);background:#fff;box-shadow:-8px 0 30px rgba(30,58,110,.18);transform:translateX(102%);transition:transform .25s;z-index:20;display:flex;flex-direction:column}
+#panel.open{transform:none}
+#panel header{display:flex;padding:14px 18px;border-bottom:2px solid var(--pale);align-items:center;font:700 18px "Noto Sans TC";color:var(--navy)}
+#panel header button{margin-left:auto;border:none;background:none;font-size:24px;cursor:pointer;color:var(--navy)}
+#pbody{overflow:auto;padding:18px 22px 40px;font-size:18px;line-height:1.8;white-space:pre-wrap}
+#help{position:fixed;left:12px;bottom:10px;font:500 13px "Noto Sans TC";color:var(--muted);z-index:5}
+#nav{position:fixed;right:12px;bottom:8px;display:flex;gap:6px;z-index:5}
+#nav button{font:700 15px "Noto Sans TC";border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:16px;padding:4px 12px;cursor:pointer}
+@media print{#panel,#help,#nav{display:none}}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- 1 封面 -->
+<section class="slide" data-notes="各位老師、各位夥伴午安，歡迎參加今天的線上說明會。我是數位學習教育中心系統開發組組長周凡淇。
+這場說明會原本排在 10 月 23 日，因為颱風停班停課，延到今天。
+今天會先由我花幾分鐘說明計畫內容和申請方式，接著交給翰林團隊介紹功能、實際操作，最後留時間綜合座談，回答大家的問題。">
+  <div class="cover">
+    <div class="x">AI</div>
+    <div class="org">臺北市政府教育局｜計畫說明會（線上場次）</div>
+    <h1>115年「酷AI學習系統」<br>高、國中<mark>智慧教學與評量</mark>推動計畫</h1>
+    <div class="sub">酷AI × 翰林雲端學院</div>
+    <div class="meta">
+      <div><b>日期</b>2026.11.06（五）14:00</div>
+      <div><b>主辦</b>臺北市政府教育局</div>
+      <div><b>承辦</b>蓬萊國小（數位學習教育中心）</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 議程 -->
+<section class="slide" data-notes="今天的流程分三段。
+第一段是我說明計畫的目的、試辦期，以及怎麼申請帳號。
+第二段請翰林團隊示範酷AI 裡的翰林雲端學院模組：派影片、出題、評量、分析報表。
+第三段是綜合座談，問題可以先打在聊天室，我們最後一起回答。">
+  <div class="inner">
+    <div class="kicker">今天的流程</div>
+    <h2 class="title"><span>議程</span></h2>
+    <ol class="agenda">
+      <li><div class="n">1</div><div><h3>計畫說明</h3><p>目的、試辦期間、帳號申請與審核方式</p></div><div class="who">數位學習教育中心</div></li>
+      <li><div class="n">2</div><div><h3>模組功能介紹與操作示範</h3><p>派送影片、線上出題與評量、學習診斷與分析</p></div><div class="who">翰林團隊</div></li>
+      <li><div class="n">3</div><div><h3>綜合座談 Q&amp;A</h3><p>問題歡迎隨時打在聊天室</p></div><div class="who">全體</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3 計畫是什麼 -->
+<section class="slide" data-notes="先用一句話說明這個計畫：我們在酷AI 學習系統裡，整合了翰林雲端學院的授權教學資源。
+老師和學生不用另外註冊帳號，用臺北市校園單一身分驗證登入酷AI，就可以使用翰林的影音、各版本題庫和學習診斷功能。
+對象是本市公立高中和國中的老師與學生。">
+  <div class="inner">
+    <div class="kicker">一句話說明</div>
+    <h2 class="title"><span>酷AI 裡就能用翰林雲端學院</span></h2>
+    <div class="cards c3">
+      <div class="card"><div class="num">1</div><h3>一個入口</h3><p>用「臺北市校園單一身分驗證」登入酷AI，免另外註冊翰林帳號</p></div>
+      <div class="card"><div class="num">2</div><h3>完整資源</h3><p>學習影音＋高、國中<b>各版本</b>教科書題庫</p></div>
+      <div class="card"><div class="num">3</div><h3>適性診斷</h3><p>適性化練習、學習診斷、知識點分析</p></div>
+    </div>
+    <p class="foot">對象：本市公立高級中等學校、國民中學的教師與學生</p>
+  </div>
+</section>
+
+<!-- 4 計畫目標 -->
+<section class="slide" data-notes="計畫有四個目標。
+第一是平臺整合：用單一登入和資料交換，讓老師在酷AI 裡就能直接用翰林資源。
+第二是適性化：用診斷評量累積學生的學習歷程，提供個別化建議。
+第三是教師增能：辦理研習、培訓種子教師。
+第四是品質管理：定期看使用數據和師生回饋，作為後續優化和續約的依據。">
+  <div class="inner">
+    <div class="kicker">計畫目標</div>
+    <h2 class="title"><span>四個目標</span></h2>
+    <div class="cards c2">
+      <div class="card"><h3>建構平臺整合機制</h3><p>單一登入（SSO）與資料交換，打造無縫的數位學習環境</p></div>
+      <div class="card"><h3>發展適性化教學</h3><p>以診斷評量建立學習歷程，AI 分析提供個別化學習建議</p></div>
+      <div class="card"><h3>提升教師數位教學能力</h3><p>分階段增能研習、培訓種子教師、建立教學社群</p></div>
+      <div class="card"><h3>建立品質管理機制</h3><p>定期蒐集回饋、分析使用數據，作為優化與續約依據</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 功能總覽 -->
+<section class="slide" data-notes="功能面我只講大方向，細節等一下由翰林團隊示範。
+老師端可以派送影片、追蹤觀看進度；從題庫線上派卷，系統自動批閱、彙整成績；測驗後馬上看到分數、排名和知識點分布。
+學生端有個人錯題庫、試題詳解和知識點分析，可以針對弱點複習。
+另外支援跨載具，家長也能透過親子綁定了解學習狀況。">
+  <div class="inner">
+    <div class="kicker">能做什麼（細節請看翰林團隊示範）</div>
+    <h2 class="title"><span>老師派送、學生練習、系統分析</span></h2>
+    <div class="cards c4">
+      <div class="card"><div class="en">TEACHING</div><h3>教學</h3><p>大量學習影片（含雲端名師影城），派送並追蹤觀看進度</p></div>
+      <div class="card"><div class="en">EXAM</div><h3>測驗</h3><p>萬題題庫，涵蓋高中、國中各版本</p></div>
+      <div class="card"><div class="en">MANAGEMENT</div><h3>管理</h3><p>線上派卷、學生作答、自動批閱並彙整成績</p></div>
+      <div class="card"><div class="en">ANALYSIS</div><h3>分析</h3><p>即時看分數、排名、知識點分布</p></div>
+    </div>
+    <p class="foot">學生端：個人錯題庫＋試題詳解＋知識點分析，針對弱點加強複習</p>
+  </div>
+</section>
+
+<!-- 6 時程 -->
+<section class="slide" data-notes="接下來是幾個重要日期。
+試辦期從 10 月 12 日開始到 11 月 12 日。這段時間全市公立高中、國中的師生都可以直接登入體驗，不用申請。
+因為說明會延期，申請截止日從原本的 10 月 30 日延到 11 月 13 日（星期五）。
+正式帳號授權從 11 月 13 日開始，為期一年，到 116 年 11 月 13 日。
+所以請學校趁試辦期讓老師先用用看，再依使用情形和教學需求提出申請。">
+  <div class="inner">
+    <div class="kicker">重要日期</div>
+    <h2 class="title"><span>先試用，再申請</span></h2>
+    <div class="tl">
+      <div class="pt"><div class="d">10/12（一）</div><div class="dot"></div><div class="t">試辦開始<br>全市高、國中師生<br><b>免申請</b>直接登入</div></div>
+      <div class="pt now"><div class="d">11/06（五）</div><div class="dot"></div><div class="t">今天<br>計畫說明會</div></div>
+      <div class="pt"><div class="d">11/12（四）</div><div class="dot"></div><div class="t">試辦結束</div></div>
+      <div class="pt now"><div class="d">11/13（五）</div><div class="dot"></div><div class="t"><b>申請截止</b><br>（原 10/30 延長）<br>正式授權開始</div></div>
+      <div class="pt"><div class="d">116/11/13</div><div class="dot"></div><div class="t">授權一年<br>期滿</div></div>
+    </div>
+    <p class="src">依據：教育局 115.10.13 北市教資字第1153106097號函、115.10.29 北市教資字第1153112203號函</p>
+  </div>
+</section>
+
+<!-- 7 申請方式 -->
+<section class="slide" data-notes="申請方式。以學校為單位申請，不是老師個人申請。
+請在 11 月 13 日前，把帳號申請表的核章影本，加上可編輯檔，用電子公文函送蓬萊國小（數位學習教育中心）。
+同時，請把同樣的資料上傳到申請表單，網址在畫面上。
+兩個管道都要送：公文是正式程序，表單是方便我們彙整。">
+  <div class="inner">
+    <div class="kicker">怎麼申請</div>
+    <h2 class="title"><span>以「學校」為單位，兩個管道都要送</span></h2>
+    <div class="cards c2">
+      <div class="card"><div class="num">1</div><h3>電子公文</h3><p>「帳號申請表」<b>核章影本＋可編輯檔</b><br>函送 蓬萊國小（數位學習教育中心）</p></div>
+      <div class="card"><div class="num">2</div><h3>同步上傳申請表單</h3><p class="url" style="font-size:40px!important;font-weight:700">forms.gle/fbgKvGMV3AdHwE8J7</p></div>
+    </div>
+    <p class="foot">截止日：115 年 11 月 13 日（星期五）</p>
+  </div>
+</section>
+
+<!-- 8 申請表 -->
+<section class="slide" data-notes="申請表的內容很簡單。
+基本資料寫學校名稱，以及申請人，也就是學校的管理員：姓名、職稱、電話。帳號開通後，我們會用電子郵件通知這位指定的申請人。
+第二部分依年級填教師數、班級數、人數，以及預計每週登入系統的次數。
+最右邊這一欄請特別留意，它是我們分配帳號的主要依據，下一頁說明。
+最後由申請人、處室主管、校長核章。">
+  <div class="inner">
+    <div class="kicker">附件 2 帳號申請表</div>
+    <h2 class="title"><span>申請表要填什麼</span></h2>
+    <div class="cols">
+      <div style="flex:.8">
+        <ul class="bul">
+          <li><b>學校名稱</b></li>
+          <li><b>申請人（管理員）</b><br>姓名、職稱、聯絡電話</li>
+          <li>開通後以 email 通知這位申請人</li>
+        </ul>
+      </div>
+      <div>
+        <table class="tbl">
+          <tr><th>年級</th><th>教師數</th><th>班級數</th><th>人數</th><th>每週登入<br>系統次數</th></tr>
+          <tr><td>一</td><td></td><td></td><td></td><td class="hl">★</td></tr>
+          <tr><td>二</td><td></td><td></td><td></td><td class="hl">★</td></tr>
+          <tr><td>三</td><td></td><td></td><td></td><td class="hl">★</td></tr>
+          <tr><td>合計</td><td></td><td></td><td></td><td class="hl"></td></tr>
+        </table>
+        <div class="sign"><div>申請人</div><div>處室主管</div><div>校長</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 審核與分配 -->
+<section class="slide" data-notes="帳號怎麼分配。首批大約有 2 萬 5,550 組帳號。
+我們會看各校填的「預計每週登入使用率」和需求帳號數，依學制分配，優先分給預計使用率比較高的學校。
+這裡的使用率，指的是透過酷AI 登入之後，實際在系統裡使用翰林雲端學院的情形。
+所以請學校依實際教學需求填寫，不必為了多拿帳號而高估。後面會定期檢核。">
+  <div class="inner">
+    <div class="kicker">審核與分配</div>
+    <h2 class="title"><span>帳號分配看「預計使用率」</span></h2>
+    <div class="cards c3">
+      <div class="card hot"><div class="big">2萬5,550<small>組</small></div><p>首批開放帳號數（約）</p></div>
+      <div class="card"><h3>依學制分配</h3><p>參考各校填報的<b>預計每週登入使用率</b>與需求帳號數</p></div>
+      <div class="card"><h3>使用率高者優先</h3><p>使用率＝經由酷AI 登入後，實際使用翰林雲端學院教學的情形</p></div>
+    </div>
+    <p class="foot">請依實際教學需求填報，帳號會定期檢核使用情形</p>
+  </div>
+</section>
+
+<!-- 10 開通與檢核 -->
+<section class="slide" data-notes="帳號開通後，會用電子郵件通知各校的申請人。老師和學生一樣用單一身分驗證登入酷AI，就能使用翰林雲端學院模組。
+我們會定期檢核使用情形。活躍度的指標是每週至少登入 2 次、使用工具 1 次以上，以學校整體授權帳號數來算。
+長期閒置的帳號會回收，再分配給有需要的學校。計畫的目標是帳號活躍率達到 80% 以上。">
+  <div class="inner">
+    <div class="kicker">開通之後</div>
+    <h2 class="title"><span>開通、使用、定期檢核</span></h2>
+    <div class="cards c3">
+      <div class="card"><div class="num">1</div><h3>開通通知</h3><p>教育局統一開通，以 email 通知各校申請人</p></div>
+      <div class="card"><div class="num">2</div><h3>登入使用</h3><p>師生以單一身分驗證登入酷AI → 翰林雲端學院模組</p></div>
+      <div class="card"><div class="num">3</div><h3>定期檢核</h3><p>活躍度：<b>每週登入 2 次＋使用工具 1 次</b>以上；閒置帳號回收再分配</p></div>
+    </div>
+    <p class="foot">目標：帳號活躍率達 80% 以上</p>
+  </div>
+</section>
+
+<!-- 11 交棒 -->
+<section class="slide dark" data-notes="計畫說明就到這裡。接下來交給翰林團隊，帶大家實際看看酷AI 裡的翰林雲端學院怎麼用。
+有任何問題，歡迎先打在聊天室，最後綜合座談一起回答。">
+  <div class="divider">
+    <div class="k">接下來</div>
+    <h2>模組功能介紹<br>與操作示範</h2>
+    <p>翰林團隊　｜　問題請先打在聊天室</p>
+  </div>
+</section>
+
+<!-- 12 QA -->
+<section class="slide" data-notes="謝謝翰林團隊的示範。現在進入綜合座談。
+我先看聊天室裡的問題，大家也可以開麥克風提問。
+畫面右邊是幾個重點，給大家再確認一次：申請截止 11 月 13 日，電子公文加表單都要送，正式授權一年。">
+  <div class="inner">
+    <div class="kicker">綜合座談</div>
+    <div class="qa">
+      <div class="q"><div class="Q">Q&amp;A</div><h3>歡迎提問</h3><p>請打在聊天室，或開麥克風發問</p></div>
+      <div class="r">
+        <div class="card"><h4>申請截止</h4><p>115 年 11 月 13 日（五）</p></div>
+        <div class="card"><h4>送件方式</h4><p>電子公文函送蓬萊國小（數位學習教育中心）＋同步上傳表單</p></div>
+        <div class="card"><h4>申請表單</h4><p class="url">https://forms.gle/fbgKvGMV3AdHwE8J7</p></div>
+        <div class="card"><h4>授權期間</h4><p>115/11/13 ～ 116/11/13（一年）</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 結束 -->
+<section class="slide" data-notes="今天的說明會到這裡，謝謝各位老師參加，也謝謝翰林團隊。期待在酷AI 上看到大家的使用。">
+  <div class="end">
+    <h2>謝謝參與</h2>
+    <p>臺北市政府教育局｜蓬萊國小（數位學習教育中心）｜翰林團隊</p>
+  </div>
+</section>
+
+</div></div>
+
+<aside id="panel"><header>講稿<button onclick="toggleNotes()" aria-label="關閉">✕</button></header><div id="pbody"></div></aside>
+<div id="help">← → 換頁　N 講稿　F 全螢幕</div>
+<div id="nav"><button onclick="go(i-1)">‹</button><button onclick="toggleNotes()">講稿</button><button onclick="go(i+1)">›</button></div>
+
+<script>
+const S=[...document.querySelectorAll('.slide')];let i=0;
+S.forEach((s,k)=>{const p=document.createElement('div');p.className='pno';p.textContent=(k+1)+' / '+S.length;s.appendChild(p)});
+function fit(){const d=document.getElementById('deck');const r=Math.min(innerWidth/1920,innerHeight/1080);d.style.transform='scale('+r+')'}
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k===i));
+  document.getElementById('pbody').textContent=S[i].dataset.notes||'';history.replaceState(null,'','#'+(i+1))}
+function toggleNotes(){document.getElementById('panel').classList.toggle('open')}
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(i+1)}
+  else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(i-1)}
+  else if(e.key==='Home')go(0);else if(e.key==='End')go(S.length-1);
+  else if(e.key==='n'||e.key==='N')toggleNotes();
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+});
+document.getElementById('stage').addEventListener('click',e=>{if(e.clientX>innerWidth*0.66)go(i+1);else if(e.clientX<innerWidth*0.33)go(i-1)});
+addEventListener('resize',fit);fit();go((parseInt(location.hash.slice(1))||1)-1);
+</script>
+</body>
+</html>
