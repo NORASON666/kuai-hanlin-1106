@@ -22,7 +22,7 @@ html,body{margin:0;height:100%;background:#E9EFF6;color:var(--ink);font-family:"
 .slide.on{display:block}
 .slide::before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:linear-gradient(90deg,var(--sky),var(--pale) 60%,var(--orange))}
 .inner{position:absolute;inset:70px 120px 80px 120px;display:flex;flex-direction:column}
-.pno{position:absolute;right:44px;top:30px;font:700 28px "Noto Sans TC";color:var(--blue)}
+.pno{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:3;font:700 30px "Noto Sans TC";color:var(--navy);background:#fff;border:3px solid var(--navy);border-radius:30px;padding:2px 26px;letter-spacing:.05em}
 .brand{position:absolute;left:120px;bottom:30px;font:500 22px "Noto Sans TC";color:var(--muted)}
 .kicker{font:700 30px "LXGW WenKai TC",serif;color:var(--blue);letter-spacing:.06em;margin-bottom:6px}
 .kicker::before{content:"✎ ";color:var(--orange)}
