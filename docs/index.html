@@ -21,8 +21,11 @@ html,body{margin:0;height:100%;background:#E9EFF6;color:var(--ink);font-family:"
   background-image:radial-gradient(circle at 1px 1px,#e3ecf6 1px,transparent 0);background-size:28px 28px}
 .slide.on{display:block}
 .slide::before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:linear-gradient(90deg,var(--sky),var(--pale) 60%,var(--orange))}
-.inner{position:absolute;inset:70px 120px 80px 120px;display:flex;flex-direction:column}
-.hlogo{position:absolute;right:44px;top:30px;z-index:3;height:68px;padding:12px 22px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(30,58,110,.12)}
+.inner{position:absolute;inset:112px 120px 104px 120px;display:flex;flex-direction:column}
+.logos{position:absolute;right:44px;top:28px;z-index:3;display:flex;align-items:center;gap:22px;padding:12px 26px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(30,58,110,.12)}
+.logos img{display:block;height:40px}
+.logos img.doe{height:66px}
+.logos i{width:2px;height:40px;background:var(--line)}
 .pno{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:3;font:700 30px "Noto Sans TC";color:var(--navy);background:#fff;border:3px solid var(--navy);border-radius:30px;padding:2px 26px;letter-spacing:.05em}
 .brand{position:absolute;left:120px;bottom:30px;font:500 22px "Noto Sans TC";color:var(--muted)}
 .kicker{font:700 30px "LXGW WenKai TC",serif;color:var(--blue);letter-spacing:.06em;margin-bottom:6px}
@@ -192,7 +195,7 @@ mark{background:linear-gradient(transparent 55%,var(--pale) 55%);color:inherit}
 學生端有個人錯題庫、試題詳解和知識點分析，可以針對弱點複習。
 另外支援跨載具，家長也能透過親子綁定了解學習狀況。">
   <div class="inner">
-    <div class="kicker">能做什麼：翰林 TEAMS 派卷＋雲端學院資源（細節請看翰林團隊示範）</div>
+    <div class="kicker">翰林 TEAMS 派卷＋雲端學院資源</div>
     <h2 class="title"><span>老師派送、學生練習、系統分析</span></h2>
     <div class="cards c4">
       <div class="card"><div class="en">TEACHING</div><h3>教學</h3><p>大量學習影片（含雲端名師影城），派送並追蹤觀看進度</p></div>
@@ -365,7 +368,9 @@ mark{background:linear-gradient(transparent 55%,var(--pale) 55%);color:inherit}
 <script>
 const S=[...document.querySelectorAll('.slide')];let i=0;
 S.forEach((s,k)=>{const p=document.createElement('div');p.className='pno';p.textContent=(k+1)+' / '+S.length;s.appendChild(p);
-  const l=document.createElement('img');l.className='hlogo';l.src='assets/hanlin_logo.png';l.alt='翰林雲端學院';s.appendChild(l)});
+  const l=document.createElement('div');l.className='logos';
+  l.innerHTML='<img class="doe" src="assets/taipei_doe_logo.png" alt="臺北市政府教育局"><i></i><img src="assets/logo-coocAI-navy.png" alt="酷AI"><i></i><img src="assets/hanlin_logo.png" alt="翰林雲端學院">';
+  s.appendChild(l)});
 function fit(){const d=document.getElementById('deck');const r=Math.min(innerWidth/1920,innerHeight/1080);d.style.transform='scale('+r+')'}
 function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k===i));
   document.getElementById('pbody').textContent=S[i].dataset.notes||'';history.replaceState(null,'','#'+(i+1))}
